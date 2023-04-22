@@ -1,7 +1,7 @@
 <!-- 
   Nomad Coders - #3 STATE
-  #4.2 Prop Types
-  #4.3 Recap
+  #4.0 Props
+  #4.1 Memo
 -->
 
 <!--
@@ -16,37 +16,36 @@
   <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
   <!-- React DOM 설치 -->
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
-  <!-- propTypes 설치 -->
-  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   <!-- Babel 설치 -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
   <script type="text/babel">
     // props 대신 {text} 사용 가능
-    function Btn({ text, fontSize = 12 }) {
+    function Btn({ text, onClick }) {
+      console.log(text, "was rendered");
       return (
         <button
+          onClick={onClick}
           style={{
             backgroundColor: "tomato",
             color: "white",
             padding: "10px 20px",
             border: 0,
             borderRadius: 10,
-            fontSize,
           }}
         >
           {text}
         </button>
       );
     }
-    Btn.propTypes = {
-      text: PropTypes.string.isRequired,
-      fontSize: PropTypes.number.isRequired,
-    };
+    const MemorizedBtn = React.memo(Btn);
     function App() {
+      const [value, setValue] = React.useState("Save Changes");
+      const changeValue = () => setValue("Revert Chnages");
       return (
         <div>
-          <Btn text="Save Changes" fontSize={18} />
-          <Btn text={"Continue"} />
+          <MemorizedBtn text={value} onClick={changeValue} />
+          <MemorizedBtn text="Continue" />
         </div>
       );
     }
