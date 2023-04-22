@@ -1,0 +1,31 @@
+<!-- 
+  Nomad Coders - #2 THE BASICS OF REACT
+  #2.0 Introduction
+  #2.1 Before React
+-->
+
+<!-- 
+  ㅁ React JS는 UI를 interactive하게 만들어 준다. 
+-->
+
+<!DOCTYPE html>
+
+  <body>
+    <span>Total clicks: 0</span>
+    <button id="btn">Click me</button>
+  </body>
+
+  <script>
+    let counter = 0;
+    const span = document.querySelector("span");
+    const button = document.getElementById("btn");
+
+    function handleClick() {
+      counter = counter + 1;
+      span.innerText = `Total clicks: ${counter}`
+    }
+
+    button.addEventListener("click", handleClick);
+  </script>
+
+</html>

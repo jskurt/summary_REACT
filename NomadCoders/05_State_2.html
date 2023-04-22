@@ -1,0 +1,49 @@
+<!-- 
+  Nomad Coders - #3 STATE
+  #3.1 setState part One
+  #3.2 setState part Two
+  #3.4 State Functions
+-->
+
+<!--
+-->
+
+<!DOCTYPE html>
+
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- React 설치 -->
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <!-- React DOM 설치 -->
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <!-- Babel 설치 -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const root = document.getElementById("root");
+
+    function App() {
+      // .useState(초기값) function은 [초기값, 초기값 변경 function] 배열을 return한다
+      // 또한, 초기값 변경 function은 수행 되면 App component가 재생성 됨.
+      const [counter, setCounter] = React.useState(0);
+      const onClick = () => {
+        // setCounter(counter + 1);
+        setCounter((current) => current + 1);
+      }
+      return (
+        <div>
+          <h3>
+            Total clicks: {counter}
+          </h3>
+
+          <button onClick={onClick}>
+            Click me
+          </button>
+        </div>
+      );
+    };
+    ReactDOM.render(<App />, root);
+  </script>
+
+</html>

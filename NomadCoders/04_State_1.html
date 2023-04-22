@@ -1,0 +1,50 @@
+<!-- 
+  Nomad Coders - #3 STATE
+  #3.0 Understanding State
+-->
+
+<!--
+  01_VanillaJS.html로 작성했을 때 태그 전체 update 되지만,
+  04_State.html로 작성했을 때 UI에서 바뀐 부분(변경된 컴포넌트)만 업데이트 됨(React의 강점)
+-->
+
+<!DOCTYPE html>
+
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- React 설치 -->
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <!-- React DOM 설치 -->
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <!-- Babel 설치 -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    let counter = 0;
+
+    function countUp() {
+      counter = counter + 1;
+      render();
+    }
+
+    function render() {
+      ReactDOM.render(<Container />, root);
+    }
+
+    const Container = () => (
+      <div>
+        <h3>
+          Total clicks: {counter}
+        </h3>
+
+        <button onClick={countUp}>
+          Click me
+        </button>
+      </div>
+    );
+    render();
+  </script>
+
+</html>

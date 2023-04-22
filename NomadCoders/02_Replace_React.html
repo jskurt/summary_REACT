@@ -1,0 +1,48 @@
+<!-- 
+  Nomad Coders - #2 THE BASICS OF REACT
+  #2.2 Our First React Element
+  #2.3 Events in React
+-->
+
+<!-- 
+  ㅁ React JS : Application이 interactive하도록 만들어주는 library
+  ㅁ react-dom : 모든 React element들을 HTML body에 둘 수 있도록 해 줌
+  ㅁ render : user에게 보여줌(React element를 가지고 HTML로 만들어 배치)
+-->
+
+<!DOCTYPE html>
+
+  <body>
+    <div id="root"></div>
+  </body>
+  <!-- React 설치 -->
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <!-- React DOM 설치 -->
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+
+  <script>
+    const root = document.getElementById("root");
+    const h3 = React.createElement(
+      "h3",
+      {
+        onMouseEnter: () => console.log('mouse enter')
+      },
+      "Hello I'm a title"
+    );
+
+    const btn = React.createElement(
+      "button", 
+      { 
+        onClick: () => console.log('im clicked'),
+        style: {
+        backgroundColor: "tomato",
+        }
+      },
+      "Click me"
+    );
+
+    const container = React.createElement("div", null, [h3, btn]);
+    ReactDOM.render(container, root);
+  </script>
+
+</html>
