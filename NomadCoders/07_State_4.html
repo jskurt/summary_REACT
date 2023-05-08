@@ -11,7 +11,7 @@
 -->
 
 <!DOCTYPE html>
-<html lang="ko"></html>
+<html lang="ko">
   <body>
     <div id="root"></div>
   </body>
@@ -29,17 +29,18 @@
       const [inverted, setInverted] = React.useState(false);
       const onChange = (event) => {
         setAmount(event.target.value);
-    }
-    const reset = () => setAmount(0);
-    const onInvert = () => {
-      reset();
-      setInverted(current => !current);
-    };
+      };
+      const reset = () => setAmount(0);
+      const onInvert = () => {
+        reset();
+        setInverted((current) => !current);
+      };
       return (
         <div>
           <div>
             <label htmlFor="minutes">Minutes</label>
-            <input value={inverted ? amount * 60 : amount}
+            <input
+              value={inverted ? amount * 60 : amount}
               id="minutes"
               placeholder="Minutes"
               type="number"
@@ -49,16 +50,19 @@
           </div>
           <div>
             <label htmlFor="hours">Hours</label>
-            <input value={inverted ? amount : Math.round(amount / 60)} 
-              id="hours" 
-              placeholder="Hours" 
+            <input
+              value={inverted ? amount : Math.round(amount / 60)}
+              id="hours"
+              placeholder="Hours"
               type="number"
               onChange={onChange}
               disabled={inverted === false}
             />
           </div>
           <button onClick={reset}>Reset</button>
-          <button onClick={onInvert}>{inverted ? "Turn back" : "Invert"}</button>
+          <button onClick={onInvert}>
+            {inverted ? "Turn back" : "Invert"}
+          </button>
         </div>
       );
     }
@@ -67,17 +71,18 @@
       const [inverted, setInverted] = React.useState(false);
       const onChange = (event) => {
         setAmount(event.target.value);
-    }
-    const reset = () => setAmount(0);
-    const onInvert = () => {
-      reset();
-      setInverted(current => !current);
-    };
+      };
+      const reset = () => setAmount(0);
+      const onInvert = () => {
+        reset();
+        setInverted((current) => !current);
+      };
       return (
         <div>
           <div>
             <label htmlFor="kilometer">Kilometer</label>
-            <input value={inverted ? amount * (8/5) : amount}
+            <input
+              value={inverted ? amount * (8 / 5) : amount}
               id="kilometer"
               placeholder="Kilometer"
               type="number"
@@ -87,16 +92,19 @@
           </div>
           <div>
             <label htmlFor="mile">Mile</label>
-            <input value={inverted ? amount : amount * (5/8)} 
-              id="mile" 
-              placeholder="Mile" 
+            <input
+              value={inverted ? amount : amount * (5 / 8)}
+              id="mile"
+              placeholder="Mile"
               type="number"
               onChange={onChange}
               disabled={inverted === false}
             />
           </div>
           <button onClick={reset}>Reset</button>
-          <button onClick={onInvert}>{inverted ? "Turn back" : "Invert"}</button>
+          <button onClick={onInvert}>
+            {inverted ? "Turn back" : "Invert"}
+          </button>
         </div>
       );
     }
@@ -104,7 +112,7 @@
       const [index, setIndex] = React.useState("xx");
       const onSelect = (event) => {
         setIndex(event.target.value);
-      }
+      };
       return (
         <div>
           <h1>Super Converter</h1>
@@ -118,9 +126,8 @@
           {index === "0" ? <MinutesToHours /> : null}
           {index === "1" ? <KmToMile /> : null}
         </div>
-      )
-    };
+      );
+    }
     ReactDOM.render(<App />, root);
   </script>
-
 </html>

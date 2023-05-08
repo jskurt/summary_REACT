@@ -9,7 +9,7 @@
 -->
 
 <!DOCTYPE html>
-<html lang="ko"></html>
+<html lang="ko">
   <body>
     <div id="root"></div>
   </body>
@@ -30,20 +30,15 @@
       const onClick = () => {
         // setCounter(counter + 1);
         setCounter((current) => current + 1);
-      }
+      };
       return (
         <div>
-          <h3>
-            Total clicks: {counter}
-          </h3>
+          <h3>Total clicks: {counter}</h3>
 
-          <button onClick={onClick}>
-            Click me
-          </button>
+          <button onClick={onClick}>Click me</button>
         </div>
       );
-    };
+    }
     ReactDOM.render(<App />, root);
   </script>
-
 </html>

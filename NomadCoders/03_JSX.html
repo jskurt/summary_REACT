@@ -9,7 +9,7 @@
 -->
 
 <!DOCTYPE html>
-<html lang="ko"></html>
+<html lang="ko">
   <body>
     <div id="root"></div>
   </body>
@@ -30,14 +30,14 @@
     //   "Hello I'm a title"
     // );
     const Title = () => (
-      <h3 id="title" onMouseEnter={() => console.log('mouse enter')}>
+      <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
         Hello I'm a title
       </h3>
     );
 
     // const btn = React.createElement(
-    //   "button", 
-    //   { 
+    //   "button",
+    //   {
     //     onClick: () => console.log('im clicked'),
     //     style: {
     //     backgroundColor: "tomato",
@@ -46,15 +46,14 @@
     //   "Click me"
     // );
     const Button = () => (
-      <button 
-        style={{ backgroundColor: "tomato",
-        }} 
-        onClick={() => console.log('im clicked')}
+      <button
+        style={{ backgroundColor: "tomato" }}
+        onClick={() => console.log("im clicked")}
       >
         Click me
       </button>
     );
-    
+
     // const container = React.createElement("div", null, [Title, Button]);
     const Container = () => (
       <div>
@@ -64,5 +63,4 @@
     );
     ReactDOM.render(<Container />, root);
   </script>
-
 </html>

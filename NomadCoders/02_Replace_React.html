@@ -11,7 +11,7 @@
 -->
 
 <!DOCTYPE html>
-<html lang="ko"></html>
+<html lang="ko">
   <body>
     <div id="root"></div>
   </body>
@@ -25,18 +25,18 @@
     const h3 = React.createElement(
       "h3",
       {
-        onMouseEnter: () => console.log('mouse enter')
+        onMouseEnter: () => console.log("mouse enter"),
       },
       "Hello I'm a title"
     );
 
     const btn = React.createElement(
-      "button", 
-      { 
-        onClick: () => console.log('im clicked'),
+      "button",
+      {
+        onClick: () => console.log("im clicked"),
         style: {
-        backgroundColor: "tomato",
-        }
+          backgroundColor: "tomato",
+        },
       },
       "Click me"
     );
@@ -44,5 +44,4 @@
     const container = React.createElement("div", null, [h3, btn]);
     ReactDOM.render(container, root);
   </script>
-
 </html>
