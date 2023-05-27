@@ -17,7 +17,6 @@ function REACTuseEffect() {
   useEffect(() => {
     console.log("i run when 'keyword' & 'counter' changes.");
   }, [keyword, counter]);
-  console.log("hi");
   return (
     <div>
       <input
